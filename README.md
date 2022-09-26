@@ -10,21 +10,15 @@ This is a common library for [Vpnbeast](https://github.com/thevpnbeast) backend 
 
 ## Development
 This project requires below tools while developing:
-- [Golang 1.16](https://golang.org/doc/go1.16)
+- [Golang 1.19](https://golang.org/doc/go1.19)
 - [pre-commit](https://pre-commit.com/)
 - [golangci-lint](https://golangci-lint.run/usage/install/) - required by [pre-commit](https://pre-commit.com/)
+- [gocyclo](https://github.com/fzipp/gocyclo) - required by [pre-commit](https://pre-commit.com/)
 
-After installed [pre-commit](https://pre-commit.com/), make sure that you've completed the below final installation steps:
-- Make sure that you've installed [pre-commit](https://pre-commit.com/) for our git repository in root directory of the project:
-  ```shell
-  $ pre-commit install
-  ```
-- Add below custom variables to `.git/hooks/pre-commit` in the root of our git repository:
-  ```python
-  # custom variable definition for local development
-  os.environ["CONFIG_PATH"] = "./"
-  os.environ["ACTIVE_PROFILE"] = "unit-test"
-  ```
+After you installed [pre-commit](https://pre-commit.com/), simply run below command to prepare your development environment:
+```shell
+$ pre-commit install -c build/ci/.pre-commit-config.yaml
+```
 
 ## License
 Apache License 2.0
