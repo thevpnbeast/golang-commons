@@ -1,16 +1,12 @@
 package commons
 
 import (
-	"fmt"
-	"github.com/spf13/cast"
-	"github.com/spf13/viper"
-	"go.uber.org/zap"
-	"net/http"
 	"os"
-	"reflect"
+
+	"github.com/spf13/cast"
 )
 
-// unmarshalConfig creates a new *viper.Viper and unmarshalls the config into struct using *viper.Viper
+/*// unmarshalConfig creates a new *viper.Viper and unmarshalls the config into struct using *viper.Viper
 func unmarshalConfig(key string, opts interface{}) error {
 	sub := viper.Sub(key)
 	sub.AutomaticEnv()
@@ -19,9 +15,9 @@ func unmarshalConfig(key string, opts interface{}) error {
 	bindEnvs(sub, opts)
 
 	return sub.Unmarshal(opts)
-}
+}*/
 
-// bindEnvs takes *viper.Viper as argument and binds structs fields to environments variables to be able to override
+/*// bindEnvs takes *viper.Viper as argument and binds structs fields to environments variables to be able to override
 // them using environment variables at the runtime
 func bindEnvs(sub *viper.Viper, opts interface{}) {
 	elem := reflect.ValueOf(opts).Type().Elem()
@@ -31,7 +27,7 @@ func bindEnvs(sub *viper.Viper, opts interface{}) {
 		name := elem.Field(i).Name
 		_ = sub.BindEnv(name, env)
 	}
-}
+}*/
 
 // getStringEnv gets the specific environment variables with default value, returns default value if variable not set
 func getStringEnv(key, defaultValue string) string {
@@ -51,7 +47,7 @@ func getIntEnv(key string, defaultValue int) int {
 	return cast.ToInt(value)
 }
 
-// InitOptions gets options interface and appName as parameter and loads the configuration from remote config store
+/*// InitOptions gets options interface and appName as parameter and loads the configuration from remote config store
 func InitOptions(opts interface{}, name string) error {
 	activeProfile := getStringEnv("ACTIVE_PROFILE", "remote")
 	configPath := getStringEnv("CONFIG_PATH", "./../../")
@@ -95,3 +91,4 @@ func InitOptions(opts interface{}, name string) error {
 
 	return nil
 }
+*/

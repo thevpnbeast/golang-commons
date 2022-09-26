@@ -1,16 +1,12 @@
 package commons
 
 import (
-	"fmt"
-	"github.com/stretchr/testify/assert"
-	"net/http"
-	"net/http/httptest"
-	"os"
-	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-type DummyServiceOptions struct {
+/*type DummyServiceOptions struct {
 	Foo    string `env:"FOO"`
 	Bar    string `env:"BAR"`
 	Length int    `env:"LENGTH"`
@@ -70,6 +66,7 @@ func TestInitOptionsRemoteServerWrongPort(t *testing.T) {
 	err := InitOptions(opts, appName)
 	assert.NotNil(t, err)
 }
+*/
 
 func TestGetIntEnv(t *testing.T) {
 	val := getIntEnv("NON_EXISTED_ENV", 12)
